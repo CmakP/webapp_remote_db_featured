@@ -1,0 +1,27 @@
+A web application that allows users to access a remote database and follows the MVC 
+architecture.
+Users will have full access to the database table (All CRUD operations are available)
+User input will be validated on both the browser and the server side.
+
+Internationalization:
+The UI will provide runtime choices of language display
+
+Cookies
+Once the user chooses a language their choice will be saved in a persistent Cookie.
+When they return to the application in a new session the previous choice will automatically 
+be used to set the presentation language
+
+HttpSession
+Each database operation will be saved to a Collection of SQL Strings
+The Collection is to be added to the session
+A separate “summary” page will display the contents of the Collection for review purposes. 
+
+Encryption
+When connecting to the database the user will be required to provide a password that will 
+be used to decrypt the connection file information.
+
+Filters
+A ServletFilter will be used to invoke the decryption process described on the previous slide.
+When the first request is made the filter will prompt the user to enter the password.  
+If successful the primary presentation will be seen.
+If unsuccessful the user will be prompted again.
